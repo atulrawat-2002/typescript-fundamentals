@@ -77,27 +77,31 @@ export declare const User: mongoose.Model<{
     }, "id"> & {
         id: string;
     }> | undefined;
-}, mongoose.FlattenMaps<{
+}, {
     name: string;
     age?: number | null;
     email?: string | null;
     role?: "user" | "admin" | null;
-} & mongoose.DefaultTimestampProps> & {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
-}>, mongoose.FlattenMaps<{
+}>, {
     name: string;
     age?: number | null;
     email?: string | null;
     role?: "user" | "admin" | null;
-} & mongoose.DefaultTimestampProps> & {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }>;
 export declare const Order: mongoose.Model<{
-    user: any;
+    user: mongoose.Types.ObjectId;
     item: mongoose.Types.DocumentArray<{
         productName?: string | null;
         quantity?: number | null;
@@ -116,7 +120,7 @@ export declare const Order: mongoose.Model<{
 } & mongoose.DefaultTimestampProps, {}, {}, {
     id: string;
 }, mongoose.Document<unknown, {}, {
-    user: any;
+    user: mongoose.Types.ObjectId;
     item: mongoose.Types.DocumentArray<{
         productName?: string | null;
         quantity?: number | null;
@@ -137,7 +141,7 @@ export declare const Order: mongoose.Model<{
 }, {
     timestamps: true;
 }> & Omit<{
-    user: any;
+    user: mongoose.Types.ObjectId;
     item: mongoose.Types.DocumentArray<{
         productName?: string | null;
         quantity?: number | null;
@@ -162,7 +166,7 @@ export declare const Order: mongoose.Model<{
 }, mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any, any>, {}, {}, {}, {}, {
     timestamps: true;
 }, {
-    user: any;
+    user: mongoose.Types.ObjectId;
     item: mongoose.Types.DocumentArray<{
         productName?: string | null;
         quantity?: number | null;
@@ -179,7 +183,7 @@ export declare const Order: mongoose.Model<{
     total?: number | null;
     status?: "pending" | "completed" | "cancelled" | null;
 } & mongoose.DefaultTimestampProps, mongoose.Document<unknown, {}, {
-    user: any;
+    user: mongoose.Types.ObjectId;
     item: mongoose.Types.DocumentArray<{
         productName?: string | null;
         quantity?: number | null;
@@ -200,7 +204,7 @@ export declare const Order: mongoose.Model<{
 }, mongoose.MergeType<mongoose.DefaultSchemaOptions, {
     timestamps: true;
 }>> & Omit<{
-    user: any;
+    user: mongoose.Types.ObjectId;
     item: mongoose.Types.DocumentArray<{
         productName?: string | null;
         quantity?: number | null;
@@ -226,7 +230,7 @@ export declare const Order: mongoose.Model<{
     [path: string]: mongoose.SchemaDefinitionProperty<undefined, any, any>;
 } | {
     [x: string]: mongoose.SchemaDefinitionProperty<any, any, mongoose.Document<unknown, {}, {
-        user: any;
+        user: mongoose.Types.ObjectId;
         item: mongoose.Types.DocumentArray<{
             productName?: string | null;
             quantity?: number | null;
@@ -247,7 +251,7 @@ export declare const Order: mongoose.Model<{
     }, mongoose.MergeType<mongoose.DefaultSchemaOptions, {
         timestamps: true;
     }>> & Omit<{
-        user: any;
+        user: mongoose.Types.ObjectId;
         item: mongoose.Types.DocumentArray<{
             productName?: string | null;
             quantity?: number | null;
@@ -270,8 +274,8 @@ export declare const Order: mongoose.Model<{
     }, "id"> & {
         id: string;
     }> | undefined;
-}, mongoose.FlattenMaps<{
-    user: any;
+}, {
+    user: mongoose.Types.ObjectId;
     item: mongoose.Types.DocumentArray<{
         productName?: string | null;
         quantity?: number | null;
@@ -287,12 +291,14 @@ export declare const Order: mongoose.Model<{
     }>;
     total?: number | null;
     status?: "pending" | "completed" | "cancelled" | null;
-} & mongoose.DefaultTimestampProps> & {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
-}>, mongoose.FlattenMaps<{
-    user: any;
+}>, {
+    user: mongoose.Types.ObjectId;
     item: mongoose.Types.DocumentArray<{
         productName?: string | null;
         quantity?: number | null;
@@ -308,7 +314,9 @@ export declare const Order: mongoose.Model<{
     }>;
     total?: number | null;
     status?: "pending" | "completed" | "cancelled" | null;
-} & mongoose.DefaultTimestampProps> & {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
