@@ -1,13 +1,15 @@
-import './App.css'
-import Routing from './components/router/Routing';
-
+import Dashboard from "./components/higher order components/Profile";
+import withAuth from "./components/higher order components/withAuth";
+import withDarkmode from "./components/higher order components/withDarkmode";
 
 function App() {
 
-  
+  const AuthDash = withAuth(Dashboard);
+  const DarkModeedDash = withDarkmode(AuthDash);
+
   return <>
-  
-  <Routing />
+
+    <DarkModeedDash data={{ name: 'Atul' }} />
 
   </>
 }

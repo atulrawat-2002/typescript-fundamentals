@@ -1,12 +1,13 @@
-
-function Profile() {
-  return (
-    <div>
+function Dashboard({data}: any) {
 
 
+    return <>
 
-    </div>
-  )
+            <h2> This is the admin dashboard for {data?.name} </h2>
+
+    </>
 }
 
-export default Profile
+
+
+export default Dashboard
