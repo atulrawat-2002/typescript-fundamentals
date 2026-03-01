@@ -18,7 +18,7 @@ export const User = model('users', userSchema);
 const orderSchema = new Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "user",
+        ref: "users",
         required: true
     },
     item: [{
