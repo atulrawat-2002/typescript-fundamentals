@@ -5,6 +5,7 @@ import morgan from "morgan";
 
 
 const totalCPUs = os.cpus().length;
+console.log(os.cpus())
 
 if (cluster.isPrimary) {
     for (let i = 0; i < totalCPUs; i++) {
@@ -29,7 +30,7 @@ if (cluster.isPrimary) {
 
 
     app.listen(8000, () => {
-        console.log("App is listening on port no. 8000")
+        // console.log("App is listening on port no. 8000")
     })
 
 }
