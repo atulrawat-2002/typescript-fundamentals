@@ -1,11 +1,13 @@
 import './App.css'
-import Pagination from './components/pagination'
+import Parent from './components/children  props/Parent'
 
 function App() {
 
   return (
     <>
-        <Pagination />
+
+        <Parent />
+
     </>
   )
 }
