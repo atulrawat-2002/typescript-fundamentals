@@ -6,9 +6,6 @@ function Pagination() {
     const [productData, setProductData] = useState([]);
     const [currrentPage, setCurrentPage] = useState(0);
 
-    function handlePageChange(val: any) {
-
-    }
 
     useEffect(() => {
 
@@ -18,9 +15,9 @@ function Pagination() {
 
     }, [])
     
-    const start = currrentPage * 10;
-    const end = (currrentPage + 1) * 10;
     const PAGE_SIZE = 10;
+    const start = currrentPage * PAGE_SIZE;
+    const end = start + 10;
 
     return <>
     
