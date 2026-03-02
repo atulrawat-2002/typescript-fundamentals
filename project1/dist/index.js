@@ -1,9 +1,12 @@
 import express from "express";
 import cookieParser from "cookie-parser";
+import limiter from "./utils/limiter.js";
+import morgan from "morgan";
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.get('/', (req, res) => {
+app.use(morgan("dev"));
+app.get('/', limiter, (req, res) => {
     res.cookie('token', 'abc', {
         httpOnly: true,
         secure: true,
@@ -21,7 +24,7 @@ app.post('/', (req, res) => {
         message: token
     });
 });
-app.listen(3000, () => {
-    console.log('App is listening....');
+app.listen(8000, () => {
+    console.log('App is listening on port number 8000');
 });
 //# sourceMappingURL=index.js.map
