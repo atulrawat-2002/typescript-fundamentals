@@ -4,43 +4,34 @@
   box-sizing: border-box;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
-  gap: 10px;
-  justify-content: center;
-}
-
-.image-container {
+.item-container {
   border: 1px solid black;
   height: 200px;
   width: 200px;
+  padding: 5px;
 }
 
-h2 {
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.btn-container {
   text-align: center;
+  padding: 4px;
+  margin-top: 10px;
 }
 
-.pagination-button {
+.btn-container button {
   padding: 2px;
-  border: 1px solid black;
-  background-color: rgb(230, 222, 222);
-  border-radius: 10%;
   margin: 1px;
-  font-weight: 500;
   cursor: pointer;
-}
-
-.button-container {
-  text-align: center;
 }
 
 .active {
   background-color: aqua;
-}
-
-body {
-  background-color: black;
-  color: whitesmoke;
+  border: 1px solid rgb(36, 36, 36);
 }
