@@ -1,7 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
-import limiter from "./utils/limiter.js";
 import morgan from "morgan";
+import { limiter } from "./utils/limiter.js";
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
