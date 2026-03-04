@@ -1,11 +1,14 @@
-import Pagination from "./components/pagination/pagination";
+import Scroll from "./components/infinite scroll/Scroll";
+import './components/infinite scroll/scroll.css';
+
 
 function App() {
 
 
   return <>
 
-  <Pagination />
+    <Scroll />
+
 
   </>
 }
