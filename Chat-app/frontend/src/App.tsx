@@ -1,12 +1,11 @@
-import Scroll from "./components/infinite scroll/Scroll";
-
+import Landing from "./components/payments/Landing";
 
 function App() {
 
 
   return <>
 
-    <Scroll />
+    <Landing />
 
   </>
 }

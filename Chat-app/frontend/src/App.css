@@ -1,13 +1,13 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    display: grid;
-    font-size: 1.5rem;
-    font-weight: 100;
+    background-color: black;
 }
+
 /* 
 @tailwind base;
 @tailwind components;
