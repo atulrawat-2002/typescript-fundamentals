@@ -1,7 +1,5 @@
-const person: {name: string; age: number; isProgrammer: boolean} = {
-    name: 'Atul',
-    age: 23,
-    isProgrammer: true
+function printName(name: string, options?: {debugMode: boolean}): void {
+    console.log(name, options)
 }
 
-console.log(person)
+printName('Atul')
