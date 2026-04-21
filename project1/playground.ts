@@ -1,5 +1,2 @@
-function printName(name: string, options?: {debugMode: boolean}): void {
-    console.log(name, options)
-}
+type printName = (sum: number) => void
 
-printName('Atul')
