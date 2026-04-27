@@ -1,14 +1,11 @@
-interface Person {
-    name: String
+type Person = {
+    name: string
     age: number
+    isProgrammer: Boolean
 }
 
-interface newPerson extends Person  {email: string}
-
-const me: newPerson = {
+const person: Person = {
     name: 'Atul',
     age: 23,
-    email: 'sdjks'
+    isProgrammer: true
 }
-
-console.log(me)
