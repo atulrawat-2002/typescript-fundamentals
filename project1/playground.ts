@@ -1,11 +1,5 @@
-type Person = {
-    name: string
-    age: number
-    isProgrammer: Boolean
+function sayHi(name: string): void {
+    console.log(name)
 }
 
-const person: Person = {
-    name: 'Atul',
-    age: 23,
-    isProgrammer: true
-}
+type FuncType = typeof sayHi;  
