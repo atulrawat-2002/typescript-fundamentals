@@ -1,9 +1,14 @@
-const person = {
-    
-    name: "Atul",
-    age: 23
+type APIResponse<TData> = {
+    data: TData
+    isError?: boolean
 }
 
-type Tuple = [string, boolean]
+type UserResponse = APIResponse<{name: string, age: number}>
 
-const a: Tuple = ["sjklfs", true]
+const a: UserResponse = {
+    data: {
+        name: "Atul",
+        age: 23
+    },
+    isError: false
+}
