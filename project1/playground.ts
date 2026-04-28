@@ -1,5 +1,9 @@
-function sayHi(name: string): void {
-    console.log(name)
+const person = {
+    
+    name: "Atul",
+    age: 23
 }
 
-type FuncType = typeof sayHi;  
+type Tuple = [string, boolean]
+
+const a: Tuple = ["sjklfs", true]
