@@ -1,14 +1,9 @@
-type APIResponse<TData> = {
-    data: TData
-    isError?: boolean
+function wait(duration: number): Promise<any> {
+    return new Promise<string>(resolve => {
+        setTimeout(() => resolve("Hi"), duration)
+    })
 }
 
-type UserResponse = APIResponse<{name: string, age: number}>
-
-const a: UserResponse = {
-    data: {
-        name: "Atul",
-        age: 23
-    },
-    isError: false
-}
+wait(2000).then((value) => {
+    console.log(value.length) 
+})
