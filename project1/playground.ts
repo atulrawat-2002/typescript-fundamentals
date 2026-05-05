@@ -1,21 +1,17 @@
 type Todo = {
-    id: string
-    name: string
-    status: string
+    title?: string
     completed: boolean
-}
-
-type NewTodo = Omit<Todo, "id">
-
-function saveTodo(todo: NewTodo) {
-    return {
-        ...todo,
-        id: crypto.randomUUID()
+    address?: {
+        stree?: string
     }
 }
 
-function renderTodo(todo: Todo) {
-    const div = document.createElement("div");
-    div.id = todo.id;
+type FormTodo = Required<Pick<Todo, "title">> & Omit<Todo, "title">
 
+const todo: FormTodo = {
+    title: "title",
+    completed: false,
+    address: {
+        stree: "India"
+    }
 }
