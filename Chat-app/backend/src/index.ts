@@ -1,51 +1,40 @@
-import { WebSocketServer, WebSocket } from "ws";
+import express from "express";
+import Razorpay from "razorpay";
 
+const app = express();
 
-const wss = new WebSocketServer({ port: 8080 });
-// create a web socket server to listern for the connections
-
-
-
-// A user interface for a socke and which room it belongs to 
-interface User {
-    socket: WebSocket,
-    room: string
-}
-
-// array of that interface ,store the data which socket connectino belongs to wh
-const allSockets: User[] = [];
-
-wss.on("connection", (socket) => {
-
-    socket.on("message", (message) => {
-        // @ts-ignore
-        console.log(JSON.parse(message));
-        
-        // @ts-ignore
-        const parsedMessage = JSON.parse(message);
-        
-        if (parsedMessage.type === "join") {
-            console.log("user joined room", parsedMessage.payload.roomId);
-            allSockets.push({
-                socket,
-                room: parsedMessage.payload.roomId
-            })
-
-        } else if (parsedMessage.type === "chat") {
-            console.log("User wants to chat")
-            let currentRoom = null;
-
-            for (let i = 0; i < allSockets.length; i++ ) {
-                if (allSockets[i]?.socket === socket) {
-                    currentRoom = allSockets[i]?.room;
-                }
-            }
-
-            for(let i = 0; i < allSockets.length; i++ ) {
-                if(allSockets[i]?.room === currentRoom) {
-                    allSockets[i]?.socket.send(parsedMessage.payload.message);
-                }
-            }
-        }
-    })
+const instance = new Razorpay({
+    key_id: process.env.RAZORPAY_KEY_ID!,
+    key_secret: process.env.RAZORPAY_KEY_SECRET!
 })
+
+app.post('/payments/create', async(req, res ) => {
+
+    try {
+
+        const order = await instance.orders.create({
+        "amount": 5000,
+        "currency": "INR",  
+        "notes": {
+            "firstName": "Atul",
+            "lastName": "Rawat",
+            "membershipType": "Premium"
+        }
+    })  
+
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+    res.json({
+        order,
+        key: process.env.RAZORPAY_KEY_ID
+    })
+
+    } catch (error: any) {
+        console.log(error.message)
+    }
+
+})
+
+app.listen(8000, () => {
+    console.log('App is listening on port no. 8000')
+})
+
