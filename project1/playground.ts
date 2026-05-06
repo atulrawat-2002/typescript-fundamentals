@@ -1,17 +1,5 @@
-type Todo = {
-    title?: string
-    completed: boolean
-    address?: {
-        stree?: string
-    }
+function checkLength(a: String, b: number) {
+    return a.length < b;
 }
 
-type FormTodo = Required<Pick<Todo, "title">> & Omit<Todo, "title">
-
-const todo: FormTodo = {
-    title: "title",
-    completed: false,
-    address: {
-        stree: "India"
-    }
-}
+type ReturnOfLengthCheck = ReturnType<typeof checkLength>
