@@ -1,8 +1,5 @@
-function checkLength(a: String, b: number) {
-    return a.length < b;
+async function doSomething() {
+    return 2;
 }
 
-type Func = () => void
-
-// type ReturnOfLengthCheck = ReturnType<Func>
-type Params = Parameters<typeof checkLength>[0]
+type Value = Awaited<ReturnType<typeof doSomething>>
