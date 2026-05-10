@@ -1,5 +1,11 @@
-async function doSomething() {
-    return 2;
-}
+type Todo = {
+  title: String;
+};
 
-type Value = Awaited<ReturnType<typeof doSomething>>
+fetch("abc")
+  .then((res) => res.json())
+  .then((data) => {
+    return data as Todo;
+  }).then(todo => {
+
+})
