@@ -1,11 +1,13 @@
 type Todo = {
-  title: String;
-};
+  title: string
+  dueDate: String | Date
+  isComplete: boolean
+}
 
-fetch("abc")
-  .then((res) => res.json())
-  .then((data) => {
-    return data as Todo;
-  }).then(todo => {
+const todo = {
+  title: "sdf",
+  dueDate: new Date(),
+  isComplete: true
+} satisfies Todo
 
-})
+todo.dueDate.setDate(4)
